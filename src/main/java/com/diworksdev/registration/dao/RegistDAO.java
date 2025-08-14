@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import com.diworksdev.registration.util.DBConnector;
 import com.diworksdev.registration.util.DateUtil;
 
-public class registrationDAO {
+public class RegistDAO {
 	private DBConnector dbConnector = new DBConnector();	// データベースに接続するためのDBConnectorの準備する。
 	private Connection connection = dbConnector.getConnection();	// DBConnectorを使って、実際にデータベースへの接続（パイプ）を確立する。
 	private DateUtil dateUtil = new DateUtil();		// 日付に関する便利な機能を使うためのDateUtilの準備する。
