@@ -1,3 +1,4 @@
+// ユーザー登録フォームの入力データを処理するアクションクラス
 package com.diworksdev.registration.action;
 
 import java.util.Map;
@@ -20,7 +21,7 @@ public class RegistAction extends ActionSupport implements SessionAware{
 	private String address_1;
 	private String address_2;
 	private String authority;
-	public Map<String, Object> session;
+	public Map<String, Object> session;	// セッション情報を格納するマップ
 	
 	public String execute() {
 		boolean hasError = false;	// エラーがあったがどうか追跡する
@@ -123,7 +124,7 @@ public class RegistAction extends ActionSupport implements SessionAware{
 		try {
 			convertedPostalCode = Integer.parseInt(postal_code);
 		} catch (NumberFormatException e) {
-			// このエラーは通常、上記のregexチェックで捕捉されるはずですが、念のため
+			// 数値変換に失敗した場合のエラーハンドリング
 			addFieldError("postal_code", "郵便番号の形式が不正です。");
 			return ERROR;
 		}

@@ -7,7 +7,13 @@
 <struts>
 	<constant name="struts.devMode" value="true"/>
 	<package name="com.diworksdev.registration" extends="struts-default">
-		<action name="RegistrationAction"
+		<action name="account_registration" 
+		class="com.diworksdev.registration.action.HomeAction"
+		 method="execute">
+		 	<result name="success">regist.jsp</result>
+		 </action>
+		
+		<action name="RegistAction"
 		 class="com.diworksdev.registration.action.RegistAction"
 		 method="execute">
 		 	<result name="success">regist.jsp</result>
