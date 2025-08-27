@@ -234,5 +234,11 @@
             </table>
         </div>
     </div>
+    
+    <div id="footer">
+    	<div id="pr">
+    		<p>フッター</p>
+    	</div>
+    </div>
 </body>
 </html>
