@@ -8,7 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.diworksdev.registration.dao.Regist_completeDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class Regist_confirmAction extends ActionSupport implements SessionAware {
+public class Regist_completeAction extends ActionSupport implements SessionAware {
 	public Map<String, Object> session;
 	private Regist_completeDAO regist_completeDAO = new Regist_completeDAO();
 	

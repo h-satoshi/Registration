@@ -53,7 +53,7 @@
 
         <div>
             <table>
-                <s:form action="RegistrationAction">
+                <s:form action="RegistAction">
                     <tr>
                         <td>
                             <label>名前（姓）</label>

@@ -38,7 +38,7 @@
                 
                 <li><a href="#">その他</a></li>
                 
-                <li><a href="account_registration.action">アカウント登録</a></li>
+                <li><a href="RegistAction">アカウント登録</a></li>
                 
             </ul>
 

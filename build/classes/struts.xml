@@ -7,17 +7,16 @@
 <struts>
 	<constant name="struts.devMode" value="true"/>
 	<package name="com.diworksdev.registration" extends="struts-default">
-		<action name="account_registration" 
-		class="com.diworksdev.registration.action.HomeAction"
-		 method="execute">
-		 	<result name="success">regist.jsp</result>
-		 </action>
+		<!-- 既存の入力画面→確認画面へ進めるアクション -->
+    	<action name="RegistAction" class="com.diworksdev.registration.action.RegistAction">
+      		<result name="error">regist.jsp</result>
+      		<result name="success">regist_confirm.jsp</result>
+    	</action>
 		
-		<action name="RegistAction"
-		 class="com.diworksdev.registration.action.RegistAction"
-		 method="execute">
-		 	<result name="success">regist.jsp</result>
-		 	<result name="error">regist.jsp</result>
-		 </action>
+		<!-- 確認→完了 -->
+    	<action name="Regist_confirmAction" class="com.diworksdev.registration.action.Regist_confirmAction">
+      		<result name="input">regist_confirm.jsp</result>
+      		<result name="success">regist_complete.jsp</result>
+    	</action>
 	</package>
 </struts>
