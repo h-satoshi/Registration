@@ -19,12 +19,12 @@ public class Regist_confirmAction extends ActionSupport implements SessionAware 
 		String last_name_kana = (String) session.get("last_name_kana");
 		String mail = (String) session.get("mail");
 		String password = (String) session.get("password");
-		int gender = (int) session.get("gender");
-		int postal_code = (int) session.get("postal_code");
+		String gender = (String) session.get("gender");
+		String postal_code = (String) session.get("postal_code");
 		String prefecture = (String) session.get("prefecture");
 		String address_1 = (String) session.get("address_1");
 		String address_2 = (String) session.get("address_2");
-		int authority = (int) session.get("authority");
+		String authority = (String) session.get("authority");
 		
 		regist_completeDAO.registInfo(	// DAOのregistInfoを呼び出す
 				family_name, 

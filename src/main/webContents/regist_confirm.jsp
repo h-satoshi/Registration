@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,14 +43,14 @@
 		
 		<div>
 			<table>
-				<s:form action="Regist_completeAction">
+				<s:form action="regist_complete" method="post">
 					<tr id="box">
 						<td>
 							<label>名前(姓)</label>
 						</td>
 						
 						<td>
-							<s:property value="family_name" escape="false"/>
+							<s:property value="#session.family_name"/>
 						</td>
 					</tr>
 					
@@ -59,7 +60,7 @@
 						</td>
 						
 						<td>
-							<s:property value="last_name" escape="false"/>
+							<s:property value="#session.last_name"/>
 						</td>
 					</tr>
 
@@ -69,7 +70,7 @@
 						</td>
 
 						<td>
-							<s:property value="family_name_kana" escape="false"/>
+							<s:property value="#session.family_name_kana"/>
 						</td>
 					</tr>
 					
@@ -79,7 +80,7 @@
 						</td>
 
 						<td>
-							<s:property value="last_name_kana" escape="false"/>
+							<s:property value="#session.last_name_kana"/>
 						</td>
 					</tr>
 
@@ -89,7 +90,7 @@
 						</td>
 
 						<td>
-							<s:property value="mail" escape="false"/>
+							<s:property value="#session.mail"/>
 						</td>
 					</tr>
 
@@ -99,7 +100,7 @@
 						</td>
 
 						<td>
-							<s:property value="password" escape="false"/>
+							<s:property value="#session.password"/>
 						</td>
 					</tr>
 
@@ -109,7 +110,7 @@
 						</td>
 
 						<td>
-							<s:property value="gender" escape="false"/>
+							<s:property value="#session.gender"/>
 						</td>
 					</tr>
 
@@ -119,7 +120,7 @@
 						</td>
 
 						<td>
-							<s:property value="post_code" escape="false"/>
+							<s:property value="#session.postal_code"/>
 						</td>
 					</tr>
 
@@ -129,7 +130,7 @@
 						</td>
 
 						<td>
-							<s:property value="prefecture" escape="false"/>
+							<s:property value="#session.prefecture"/>
 						</td>
 					</tr>
 
@@ -139,7 +140,7 @@
 						</td>
 
 						<td>
-							<s:property value="address_1" escape="false"/>
+							<s:property value="#session.address_1"/>
 						</td>
 					</tr>
 
@@ -149,7 +150,7 @@
 						</td>
 
 						<td>
-							<s:property value="address_2" escape="false"/>
+							<s:property value="#session.address_2"/>
 						</td>
 					</tr>
 
@@ -159,7 +160,7 @@
 						</td>
 
 						<td>
-							<s:property value="authority" escape="false"/>
+							<s:property value="#session.authority"/>
 						</td>
 					</tr>
 
