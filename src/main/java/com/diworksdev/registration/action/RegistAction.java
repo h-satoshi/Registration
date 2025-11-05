@@ -24,6 +24,25 @@ public class RegistAction extends ActionSupport implements SessionAware{
 	public Map<String, Object> session;	// セッション情報を格納するマップ
 	
 	public String execute() {
+		// 初回アクセス（まだフォームを送っていない）なら、バリデーションせずに入力画面を表示
+		if (family_name == null
+			&& last_name == null
+			&& family_name_kana == null
+			&& last_name_kana == null
+			&& mail == null
+			&& password == null
+			&& gender == null
+			&& postal_code == null
+			&& prefecture == null
+			&& address_1 == null
+			&& address_2 == null
+			&& authority == null) {
+			
+			// struts.xml の <result name="input">regist.jsp</result> に飛ぶ
+			return INPUT;
+			
+		}
+		
 		boolean hasError = false;	// エラーがあったがどうか追跡する
 		
 		// 各フィールドの未入力チェックとエラーメッセージの設定
@@ -75,11 +94,6 @@ public class RegistAction extends ActionSupport implements SessionAware{
             hasError = true;
         }
 		
-		if (gender == null || gender.equals("")) {
-		    addFieldError("gender", "性別が未選択です。");
-		    hasError = true;
-		}
-		
 		if (postal_code == null || postal_code.equals("")) {
 			addFieldError("postal_code", "郵便番号が未入力です。");
 			hasError = true;
@@ -110,7 +124,7 @@ public class RegistAction extends ActionSupport implements SessionAware{
         }
 		
 		if (hasError) {	// エラーが一つでもあればここで処理を終了する
-			return ERROR;
+			return INPUT;
 		}
 		
 		int convertedGender;	// エラーがなければ、int型への変換とセッションへの保存を行う
@@ -126,7 +140,7 @@ public class RegistAction extends ActionSupport implements SessionAware{
 		} catch (NumberFormatException e) {
 			// 数値変換に失敗した場合のエラーハンドリング
 			addFieldError("postal_code", "郵便番号の形式が不正です。");
-			return ERROR;
+			return INPUT;
 		}
 
 		int convertedAuthority;

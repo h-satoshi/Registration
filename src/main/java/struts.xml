@@ -9,14 +9,20 @@
 	<package name="com.diworksdev.registration" extends="struts-default">
 		<!-- 既存の入力画面→確認画面へ進めるアクション -->
     	<action name="RegistAction" class="com.diworksdev.registration.action.RegistAction">
-      		<result name="error">regist.jsp</result>
-      		<result name="success">regist_confirm.jsp</result>
+      		<!-- 初回表示 & 入力エラー時 -->
+   			<result name="input">regist.jsp</result>
+   			
+      		<!-- チェックOK → 確認画面へ -->
+    		<result name="success">regist_confirm.jsp</result>
     	</action>
 		
 		<!-- 確認→完了 -->
-    	<action name="Regist_confirmAction" class="com.diworksdev.registration.action.Regist_confirmAction">
-      		<result name="input">regist_confirm.jsp</result>
-      		<result name="success">regist_complete.jsp</result>
+    	<action name="Regist_completeAction" class="com.diworksdev.registration.action.Regist_completeAction">
+      		<!-- 登録成功で完了画面へ -->
+            <result name="success">regist_complete.jsp</result>
+            
+            <!-- もし何かあって入力に戻したい場合 -->
+            <result name="input">regist_confirm.jsp</result>
     	</action>
 	</package>
 </struts>

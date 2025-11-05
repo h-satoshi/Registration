@@ -43,7 +43,7 @@
 		
 		<div>
 			<table>
-				<s:form action="regist_complete" method="post">
+				<s:form action="Regist_completeAction" method="post">
 					<tr id="box">
 						<td>
 							<label>名前(姓)</label>
@@ -100,7 +100,7 @@
 						</td>
 
 						<td>
-							<s:property value="#session.password"/>
+							<s:iterator begin="1" end="%{#session.password.length()}">●</s:iterator>
 						</td>
 					</tr>
 
@@ -110,7 +110,8 @@
 						</td>
 
 						<td>
-							<s:property value="#session.gender"/>
+							<s:if test="#session.gender == 0">男</s:if>
+        					<s:elseif test="#session.gender == 1">女</s:elseif>
 						</td>
 					</tr>
 
@@ -160,13 +161,14 @@
 						</td>
 
 						<td>
-							<s:property value="#session.authority"/>
+							<s:if test="#session.authority == 0">一般</s:if>
+        					<s:elseif test="#session.authority == 1">管理者</s:elseif>
 						</td>
 					</tr>
 
 					<tr>
 						<td>
-							<input type="button" value="前に戻る" onclick="history.back">
+							<input type="button" value="前に戻る" onclick="history.back();">
 
 							<input type="submit" value="登録する">
 						</td>

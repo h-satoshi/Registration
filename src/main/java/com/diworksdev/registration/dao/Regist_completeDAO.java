@@ -17,9 +17,9 @@ public class Regist_completeDAO {
 						+" VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
 	
 	public void registInfo(String family_name, String last_name, String family_name_kana,
-						   String last_name_kana, String mail, String password, String gender,
-						   String postal_code, String prefecture, String address_1, String address_2,
-						   String authority) throws SQLException {
+						   String last_name_kana, String mail, String password, int gender,
+						   int postal_code, String prefecture, String address_1, String address_2,
+						   int authority) throws SQLException {
 		
 		try (Connection connection = dbConnector.getConnection(); 
 			 PreparedStatement preparedStatement = connection.prepareStatement(sql)){
@@ -30,18 +30,16 @@ public class Regist_completeDAO {
 			preparedStatement.setString(4, last_name_kana);
 			preparedStatement.setString(5, mail);
 			preparedStatement.setString(6, password);
-			preparedStatement.setString(7, gender);
-			preparedStatement.setString(8, postal_code);
+			preparedStatement.setInt(7, gender);
+			preparedStatement.setInt(8, postal_code);
 			preparedStatement.setString(9, prefecture);
 			preparedStatement.setString(10, address_1);
 			preparedStatement.setString(11, address_2);
-			preparedStatement.setString(12, authority);
+			preparedStatement.setInt(12, authority);
 			
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
-			connection.close();
 		}
 	}
 }

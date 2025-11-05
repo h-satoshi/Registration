@@ -110,7 +110,7 @@
                             <label>パスワード</label>
                         </td>
                         <td>
-                            <input type="password" name="password" value="" maxlength="10">
+                            <input type="text" name="password" value="" maxlength="10">
                             <s:fielderror fieldName="password" cssClass="error-message"/>
                         </td>
                     </tr>
@@ -122,7 +122,6 @@
                         <td>
                             <input type="radio" name="gender" value="1" checked="checked">男
                         	<input type="radio" name="gender" value="2" >女
-                        	<s:fielderror fieldName="gender" cssClass="error-message"/> 
                         </td>
                     </tr>
 
@@ -224,7 +223,6 @@
                                 <option value="1">一般</option>
                             	<option value="2">管理者</option>
                         	</select>
-                        	<s:fielderror fieldName="authority" cssClass="error-message"/>
                         </td>
                     </tr>
 
