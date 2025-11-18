@@ -21,6 +21,7 @@ public class RegistAction extends ActionSupport implements SessionAware{
 	private String address_1;
 	private String address_2;
 	private String authority;
+	private String back;
 	public Map<String, Object> session;	// セッション情報を格納するマップ
 	
 	public String execute() {
@@ -37,7 +38,7 @@ public class RegistAction extends ActionSupport implements SessionAware{
 			&& address_1 == null
 			&& address_2 == null
 			&& authority == null) {
-			
+		
 			// struts.xml の <result name="input">regist.jsp</result> に飛ぶ
 			return INPUT;
 			
@@ -286,6 +287,14 @@ public class RegistAction extends ActionSupport implements SessionAware{
 	// authorityのセッター: authorityフィールドに値を設定
 	public void setAuthority(String authority) {
 		this.authority = authority;
+	}
+	
+	public String getBack() {
+	    return back;
+	}
+
+	public void setBack(String back) {
+	    this.back = back;
 	}
 	
 	@Override

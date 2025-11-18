@@ -11,33 +11,7 @@
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 <title>ユーザー登録画面</title>
-<style type="text/css">
-    body{
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        letter-spacing: 1px;
-        font-family: Verdana, Helvetica, sans-serif;
-        font-size: 12px;
-        color: #333;
-        background: #fff;
-    }
-
-    table{
-        text-align: center;
-        margin: 0 auto;
-    }
-    
-    .error-message {
-        color: red; 
-        font-size: 11px; 
-        margin-left: 5px; 
-        display: block;
-    	min-height: 20px;
-    	margin-top: 2px;
-    	margin-bottom: 2px;
-    }
-</style>
+<link rel="stylesheet" href="./css/regist.css">
 </head>
 <body>
     <div id="header">
@@ -52,8 +26,8 @@
         </div>
 
         <div>
-            <table>
-                <s:form action="RegistAction">
+            <s:form action="RegistAction">
+                <table>
                     <tr>
                         <td>
                             <label>名前（姓）</label>
@@ -130,7 +104,7 @@
                             <label>郵便番号</label>
                         </td>
                         <td>
-                            <input type="text" name="postal_code" value="" maxlength="7">
+                            <input type="text" name="postal_code" value="" maxlength="7" class="wide-field">
                             <s:fielderror fieldName="postal_code" cssClass="error-message"/>
                         </td>
                     </tr>
@@ -140,7 +114,7 @@
                             <label>住所（都道府県）</label>
                         </td>
                         <td>
-                            <select name="prefecture">
+                            <select name="prefecture" class="wide-field">
                                 <option value="">選択してください</option>
                                 <option value="北海道" >北海道</option>
                                 <option value="青森県" >青森県</option>
@@ -219,17 +193,21 @@
                             <span>アカウント権限</span>
                         </td>
                         <td>
-                            <select name="authority">
+                            <select name="authority" class="wide-field">
                                 <option value="1">一般</option>
                             	<option value="2">管理者</option>
                         	</select>
                         </td>
                     </tr>
 
-                    <s:submit value="確認する"></s:submit>
+                    <tr>
+                        <td colspan="2" style="text-align:center; padding-top:20px;">
+                            <s:submit value="確認する" cssClass="submit-button" theme="simple"/>
+                        </td>
+                    </tr>
                     
-                </s:form>
-            </table>
+                </table>
+            </s:form>
         </div>
     </div>
     

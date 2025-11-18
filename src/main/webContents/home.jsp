@@ -11,7 +11,7 @@
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 <title>diblog</title>
-<link rel="stylesheet" href="./css/homestyle.css">
+<link rel="stylesheet" href="./css/home.css">
 </head>
 <body>
 	<header>

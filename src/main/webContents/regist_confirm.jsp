@@ -11,23 +11,7 @@
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 <title>アカウント登録確認画面</title>
-<style type="text/css">
-    body{
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        letter-spacing: 1px;
-        font-family: Verdana, Helvetica, sans-serif;
-        font-size: 12px;
-        color: #333;
-        background: #fff;
-    }
-
-    table{
-        text-align: center;
-        margin: 0 auto;
-    }
-</style>
+<link rel="stylesheet" href="./css/regist_confirm.css">
 </head>
 <body>
 	<div id="header">
@@ -42,8 +26,9 @@
 		</div>
 		
 		<div>
-			<table>
-				<s:form action="Regist_completeAction" method="post">
+			<s:form action="Regist_completeAction" method="post">
+				<table>
+				
 					<tr id="box">
 						<td>
 							<label>名前(姓)</label>
@@ -164,17 +149,15 @@
 							<s:if test="#session.authority == 0">一般</s:if>
         					<s:elseif test="#session.authority == 1">管理者</s:elseif>
 						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<input type="button" value="前に戻る" onclick="history.back();">
-
-							<input type="submit" value="登録する">
-						</td>
-					</tr>
-				</s:form>
-			</table>
+					</tr>	
+				</table>
+				
+				<div id="buttons">
+					<input type="button" value="前に戻る" onclick="history.back();" class="submit-button">
+					<input type="submit" value="登録する" class="submit-button">
+				</div>
+				
+			</s:form>		
 		</div>	
 	</div>
 

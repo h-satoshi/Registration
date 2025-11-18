@@ -11,23 +11,7 @@
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
 <title>アカウント登録完了画面</title>
-<style type="text/css">
-    body{
-        margin: 0;
-        padding: 0;
-        line-height: 1.6;
-        letter-spacing: 1px;
-        font-family: Verdana, Helvetica, sans-serif;
-        font-size: 12px;
-        color: #333;
-        background: #fff;
-    }
-
-    table{
-        text-align: center;
-        margin: 0 auto;
-    }
-</style>
+<link rel="stylesheet" href="./css/regist_complete.css">
 </head>
 <body>
 	<div id="header">
@@ -41,11 +25,14 @@
 			<p>	アカウント登録完了画面</p>
 		</div>
 		
-		<div>
+		<div id="center">
 			<h1>登録完了しました</h1>
 		</div>
-		
-		<input type="button" value="TOPページへ戻る" onclick="location.href='home.jsp';">
+	</div>
+
+	<div id="button">
+		<input type="button" value="TOPページへ戻る" onclick="location.href='home.jsp';" class="submit-button">
+	</div>
 
 	<div id="footer">
 		<div id="pr">
